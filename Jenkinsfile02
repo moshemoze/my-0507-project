@@ -1,1 +1,11 @@
+properties([pipelineTriggers([pollSCM('* * * * *')])])
+node {
+    stage("clone"){
+        git branch: 'my_branch02', url: 'https://github.com/moshemoze/my-0507-project.git'
+    }
+    stage("show files"){
+        bat "dir"
+    }
+}
+
 
